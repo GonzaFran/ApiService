@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1>SET HEADERS</h1>
+           <div style="display: flex;flex-direction: row;align-items: baseline;">
+                <input type="text" id="key" class="headerBox">
+                <p>:</p>
+                <input type="text" id="value" class="headerBox">
+            </div>
+            <div style="display: flex;flex-direction: row;align-items: baseline;justify-content: space-around;width: 30%;">
+                <button id="add">Añadir</button>
+                <button id="cleaner">Limpiar</button>
+                <button id="inspector">Headers</button>
+            </div>         
+    </header>
+    <div id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="titleModal"></h3>
+            <p id="textModal"></p>
+        </div>
+    </div>
+    
+    <div id="result">
+        <div class="result-content">
+            <span class="close-result">&times;</span>
+            <h3 id="result-title"></h3>
+            <div id="call-result"></div>
+        </div>
+    </div>
+
+
+    <main style = "display: flex;flex-direction: row; justify-content: space-around; margin-top: 5%;">
+        <form id="llamada_de_usuario" class="formulario">
+            <h1>Obtener Token de acceso (POST)</h1>
+            <div class="container">
+                <h3>Usuario de buquebus</h3>
+                <input type="text" id="userBqbs"> 
+            
+                <h3>Contraseña de buquebus</h3>
+                <input type="password" autocomplete="off" id="passBqbs"> 
+
+                <h3>Client ID</h3>
+                <input type="text" autocomplete="off" id="clientId"> 
+            
+                <h3>Client Secret</h3>
+                <input type="password" autocomplete="off" id="clientSecret">            
+            </div>
+            <button type="submit" id="ObtainTokenAccess">Obtener</button>
+        </form>
+
+        <form id="refrescar_token" class="formulario">
+            <h1>Refrescar Token de acceso (POST)</h1>
+            <div class="container">
+                <h3>refresh_token</h3>
+                <input type="text" autocomplete="off" id="refreshToken">
+
+                <h3>client_id</h3>
+                <input type="text" autocomplete="off" id="RefreshId">
+
+                <h3>client_secret</h3>
+                <input type="text" autocomplete="off" id="RefreshSecret">
+            </div>
+            <button type="submit" id="RefreshAccessToken"> Refrescar </button>
+        </form>
+
+        <form class="formulario">
+            <h1>Obtener puntos de venta (GET)</h1>
+            <div class="container">
+                <h3>access_Token</h3>
+                <input type="text" autocomplete="off" id="accessTokenSalePoints"> 
+            </div>
+            <button type="submit" id="ObtainSalePoints">Obtener</button>
+        </form>    
+        <form id="data_de_usuario" class="formulario">
+            <h1>Obtener data usuario (GET)</h1>
+            <div class="container">
+                <h3>access Token</h3>
+                <input type="text" autocomplete="off" id="accessToken"> 
+            </div>  
+            <button type="submit" id="ObtainDataUser">Obtener</button>
+        </form>
+
+        <form class="formulario">
+            <h1>Asignar puntos de venta (POST)</h1>
+            <div class="container">
+                <h3>access token</h3>
+                <input type="text" autocomplete="off" id="TokenAssignSalePoints"> 
+            </div>
+            <button type="submit" id="AssignSalePoints">Asignar</button>
+        </form>
+    </main>
+   
+    <script type="module" src="Apiconfigure.js"></script>
+    <script type="module" src="apiservice.js"></script>
+</body>
+</html>
